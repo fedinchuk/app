@@ -1,0 +1,27 @@
+<div class="header">
+  <div class="title">
+    Актуальний курс валют по відношенню до гривні (UAH):
+  </div>
+  <div class="curs">
+    <div>
+      <div>USD: {{ usdToUahRate | number:'1.2-2' }}</div>
+      <div>EUR: {{ eurToUahRate | number:'1.2-2' }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="converter">
+  <div class="row">
+    <input type="number" [(ngModel)]="amount1" (input)="onAmount1Change()">
+    <select [(ngModel)]="currency1" (change)="onCurrency1Change()">
+      <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+    </select>
+  </div>
+  <div class="row">
+    <input type="number" [(ngModel)]="amount2" (input)="onAmount2Change()">
+    <select [(ngModel)]="currency2" (change)="onCurrency2Change()">
+      <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+    </select>
+  </div>
+</div>
+
